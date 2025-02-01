@@ -18,7 +18,7 @@ export function VideoSection() {
         <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl opacity-0 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
           <Player
             component={LoanProcessVideo}
-            durationInFrames={840} // Increased total duration
+            durationInFrames={1200} // Extended to 40 seconds for better pacing
             fps={30}
             compositionWidth={1920}
             compositionHeight={1080}
