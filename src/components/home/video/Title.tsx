@@ -23,7 +23,7 @@ export function Title({ text, subtitle, description }: TitleProps) {
         textAlign: 'center',
       }}
     >
-      <div className="mb-6">
+      <div className="mb-8">
         {words.map((word, i) => (
           <span
             key={word}
@@ -31,17 +31,25 @@ export function Title({ text, subtitle, description }: TitleProps) {
               display: 'inline-block',
               marginRight: '0.3em',
               opacity: spring({
-                frame: frame - i * 5, // Slower word appearance
+                frame: frame - i * 8, // Slower word appearance
                 fps,
-                config: { damping: 80 }, // Softer animation
+                config: { 
+                  damping: 100,
+                  stiffness: 200,
+                  mass: 1.5
+                },
               }),
               transform: `scale(${spring({
-                frame: frame - i * 5,
+                frame: frame - i * 8,
                 fps,
-                config: { damping: 80 },
+                config: { 
+                  damping: 100,
+                  stiffness: 200,
+                  mass: 1.5
+                },
               })})`,
             }}
-            className="text-5xl font-bold text-white"
+            className="text-6xl font-bold text-white drop-shadow-lg"
           >
             {word}
           </span>
@@ -52,17 +60,25 @@ export function Title({ text, subtitle, description }: TitleProps) {
         <p
           style={{
             opacity: spring({
-              frame: frame - words.length * 5,
+              frame: frame - words.length * 8,
               fps,
-              config: { damping: 80 },
+              config: { 
+                damping: 100,
+                stiffness: 200,
+                mass: 1.5
+              },
             }),
             transform: `translateY(${spring({
-              frame: frame - words.length * 5,
+              frame: frame - words.length * 8,
               fps,
-              config: { damping: 80 },
-            }) * 20}px)`,
+              config: { 
+                damping: 100,
+                stiffness: 200,
+                mass: 1.5
+              },
+            }) * 30}px)`,
           }}
-          className="text-2xl text-white/80 mb-4"
+          className="text-3xl text-white/90 mb-6 drop-shadow-md"
         >
           {subtitle}
         </p>
@@ -72,17 +88,25 @@ export function Title({ text, subtitle, description }: TitleProps) {
         <p
           style={{
             opacity: spring({
-              frame: frame - (words.length + 5) * 5,
+              frame: frame - (words.length + 8) * 8,
               fps,
-              config: { damping: 80 },
+              config: { 
+                damping: 100,
+                stiffness: 200,
+                mass: 1.5
+              },
             }),
             transform: `translateY(${spring({
-              frame: frame - (words.length + 5) * 5,
+              frame: frame - (words.length + 8) * 8,
               fps,
-              config: { damping: 80 },
-            }) * 20}px)`,
+              config: { 
+                damping: 100,
+                stiffness: 200,
+                mass: 1.5
+              },
+            }) * 30}px)`,
           }}
-          className="text-xl text-white/60"
+          className="text-2xl text-white/80 drop-shadow-sm"
         >
           {description}
         </p>
