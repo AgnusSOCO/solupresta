@@ -1,0 +1,186 @@
+/* Custom styles for specific components */
+
+/* Form styles */
+.form-control {
+  @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm;
+  @apply focus:ring-primary-cyan focus:border-primary-cyan;
+  @apply bg-white;
+}
+
+.form-select {
+  @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm;
+  @apply focus:ring-primary-cyan focus:border-primary-cyan;
+  @apply bg-white;
+}
+
+.form-check {
+  @apply flex items-center;
+}
+
+.form-check-input {
+  @apply h-4 w-4 text-primary-cyan border-gray-300 rounded;
+  @apply focus:ring-primary-cyan;
+}
+
+.form-check-label {
+  @apply ml-2 block text-sm text-gray-700;
+}
+
+/* Button styles */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 border border-transparent;
+  @apply text-base font-medium rounded-md shadow-sm;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  @apply transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-primary-cyan text-white;
+  @apply hover:bg-primary-navy focus:ring-primary-cyan;
+}
+
+.btn-primary span {
+  @apply text-white;
+}
+
+.btn-outline-primary {
+  @apply border-primary-cyan text-primary-cyan bg-transparent;
+  @apply hover:bg-primary-cyan hover:text-white focus:ring-primary-cyan;
+}
+
+.btn-outline-primary span {
+  @apply text-primary-cyan;
+  @apply group-hover:text-white;
+}
+
+/* Alert styles */
+.alert {
+  @apply rounded-md p-4 mb-4;
+}
+
+.alert-danger {
+  @apply bg-red-50 text-red-700 border border-red-200;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden;
+}
+
+.card-body {
+  @apply p-6;
+}
+
+.card-title {
+  @apply text-xl font-semibold text-primary-navy mb-4;
+}
+
+/* Navigation styles */
+.nav-link {
+  @apply text-gray-700 hover:text-primary-cyan;
+  @apply transition-all duration-300;
+}
+
+/* Grid system */
+.row {
+  @apply flex flex-wrap -mx-4;
+}
+
+.col-md-6 {
+  @apply px-4 w-full md:w-1/2;
+}
+
+.col-lg-5 {
+  @apply px-4 w-full lg:w-5/12;
+}
+
+/* Loading spinner */
+.spinner-border {
+  @apply inline-block w-8 h-8 border-4 border-primary-cyan border-r-transparent rounded-full;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Form specific styles */
+.form1-body, .form2-body, .form3-body, .form4-body, .form5-body, .form6-body {
+  @apply bg-white rounded-lg shadow-md p-6 mb-8;
+}
+
+.inner-form-heading {
+  @apply text-lg font-semibold mb-4;
+}
+
+.inner-form-number, .inner-form-batch, .inner-form-Entity {
+  @apply flex gap-4 mb-4;
+}
+
+.inner1-number, .inner2-number {
+  @apply flex-1;
+}
+
+.date-inputs {
+  @apply flex gap-2 mb-4;
+}
+
+.gender-inputs {
+  @apply flex gap-2 mb-4;
+}
+
+.gender-inputs input {
+  @apply flex-1 cursor-pointer;
+}
+
+.gender-inputs input.active {
+  @apply bg-primary-cyan text-white;
+}
+
+/* Custom select wrapper */
+.custom-select-wrapper {
+  @apply relative;
+}
+
+.custom-dropdown-icon {
+  @apply absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none;
+}
+
+/* Blog styles */
+.Blog-section {
+  @apply py-12 bg-gray-50;
+}
+
+.Blog-heading {
+  @apply text-center mb-8;
+}
+
+/* Team cards */
+.team-cards {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+/* Testimonials */
+.testimonial-card {
+  @apply bg-white rounded-lg shadow-md p-6;
+}
+
+/* Social icons */
+.social-icons {
+  @apply flex justify-center gap-4 mt-6;
+}
+
+.social-icon {
+  @apply w-10 h-10 rounded-full flex items-center justify-center;
+  @apply bg-primary-cyan text-white hover:bg-primary-navy;
+  @apply transition-all duration-300;
+}
+
+.social-icon span {
+  @apply text-white;
+}

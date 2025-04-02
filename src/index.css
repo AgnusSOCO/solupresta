@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-navy);
+  }
+  
+  h1 {
+    @apply text-4xl font-bold;
+  }
+  
+  h2 {
+    @apply text-3xl font-semibold;
+  }
+  
+  h3 {
+    @apply text-2xl font-medium;
+  }
+  
+  p {
+    @apply text-base text-text-secondary;
+  }
+  
+  a {
+    @apply text-primary-cyan hover:text-primary-navy transition-colors duration-200;
+  }
+
+  section {
+    @apply relative overflow-hidden;
+  }
+}
+
+@layer components {
+  /* Hero Section */
+  .hero-section {
+    @apply relative min-h-[calc(100vh-5rem)] flex items-center;
+    margin-top: 5rem;
+  }
+
+  /* Section Transitions */
+  .section-transition {
+    @apply relative py-24 lg:py-32;
+  }
+
+  .section-transition::before {
+    content: '';
+    @apply absolute inset-x-0 -top-32 h-32 bg-gradient-to-b from-transparent to-white/50 pointer-events-none;
+  }
+
+  .section-transition::after {
+    content: '';
+    @apply absolute inset-x-0 -bottom-32 h-32 bg-gradient-to-t from-transparent to-white/50 pointer-events-none;
+  }
+
+  /* Background Noise */
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* Animations */
+  .animate-float {
+    animation: float 20s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 20s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .animate-float-slow {
+    animation: float 30s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .animate-float-delayed-slow {
+    animation: float 30s ease-in-out infinite;
+    animation-delay: 3s;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 15s ease-in-out infinite;
+  }
+
+  .animate-pulse-delayed {
+    animation: pulse 15s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(2%, -2%) scale(1.02);
+    }
+    50% {
+      transform: translate(0, -4%) scale(1.05);
+    }
+    75% {
+      transform: translate(-2%, -2%) scale(1.02);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1) translate(0, 0);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.1) translate(-2%, 2%);
+    }
+  }
+
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-2rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(2rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto px-4 max-w-7xl;
+  }
+}
